@@ -13,10 +13,10 @@
 
  ...
  
-<script src="https://agtom.eu/f/kajtek/skrypty/kajtek_widget_manuals.js"></script>
-<script src="https://agtom.eu/f/kajtek/skrypty/kajtek_product_translate.js"></script>
-<script src="https://agtom.eu/f/kajtek/skrypty/kajtek_widget_tools.js"></script>
-<script src="https://agtom.eu/f/kajtek/skrypty/kajtek_side_menu.js"></script>
+<script src="/kajtek_widget_manuals.js"></script>
+<script src="/kajtek_product_translate.js"></script>
+<script src="/kajtek_widget_tools.js"></script>
+<script src="/kajtek_side_menu.js"></script>
 
 ...
 
