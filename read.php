@@ -1,3 +1,30 @@
+//READ PDF FILES FROM EXTERNAL SERVER
+
+<?php
+
+//WYŚWIETLANIE PODGLĄDÓW PIERWSZYSCH STRON INSTRUKCJI ORAZ LINK DO INSTRUKCJI W FORMACIE PDF
+//KAJETAN KUCHARCZYK 29.12.2018
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+//ZMIENNE
+$company = $_POST['c'];
+$reference = $_POST['r'];
+
+//PRZYGOTOWANIE ZMIENNYCH
+$company = str_replace(" ", "", $company);
+$reference = str_replace(" ", "", $reference);
+
+//WYWOŁANIA PLIKU Z INNEGO SERWERA
+$response = file_get_contents("EXTERNAL-SERVER-PATH?c=$company&r=$reference");
+
+print_r($response);
+?>
+
+//READ PDF FILES FROM SERVER
+
 <?php
 //WYŚWIETLANIE PODGLĄDÓW PIERWSZYSCH STRON INSTRUKCJI ORAZ LINK DO INSTRUKCJI W FORMACIE PDF
 //KAJETAN KUCHARCZYK 29.12.2018
