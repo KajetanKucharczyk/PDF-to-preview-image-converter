@@ -16,7 +16,7 @@ error_reporting(E_ALL);
 $company = $_GET['c'];
 
 //SCIEŻKA
-$dir = "/home/admin/domains/agtom.eu/public_html/download/".$company."/";
+$dir = "/download/".$company."/";
 echo "Katalog: ".$dir."<br><br>";
 
 //KATALOG ISTNIEJE
@@ -47,7 +47,7 @@ if(is_dir($dir)){
 						rename($dir.$entry, $dir.$pieces[0]."/".$entry);
 						echo "Plik pdf przeniesiony do katalogu: ".$dir.$pieces[0]."/".$entry."<br><br>";;
 						//REFRESH STRONY
-						echo "<a href='https://agtom.eu/f/kajtek/instrukcje/obrazki.php?c=$company' >KLIKNIJ ABY ODŚWIEŻYĆ</a>"."<br><br>";
+						echo "<a href='obrazki.php?c=$company' >KLIKNIJ ABY ODŚWIEŻYĆ</a>"."<br><br>";
 					}
 				}
 			}	
@@ -85,13 +85,13 @@ function php_to_images($pdf, $path, $ref, $company){
 		//ZAPIS
 		$imm->writeImage($path."/".$ref."_".$i.".png");
 		echo "Stworzono plik ".$path."/".$ref."_".$i.".png<br>";
-		echo "<img src='https://agtom.eu/download/$company/$ref/".$ref."_".$i.".png' /><br><br>";		
+		echo "<img src='h/download/$company/$ref/".$ref."_".$i.".png' /><br><br>";		
 		$imm->clear();
 		$imm->destroy();
 	}
 	echo "<br><br>";
 	//AUTOMATYCZNY REFRESH PO 2500MS
-	echo "<script>setTimeout(function(){window.open('https://agtom.eu/f/kajtek/instrukcje/obrazki.php?c=$company', '_self')}, 2500)</script>";
+	echo "<script>setTimeout(function(){window.open('/obrazki.php?c=$company', '_self')}, 2500)</script>";
 	return 1;
 }
 ?>
